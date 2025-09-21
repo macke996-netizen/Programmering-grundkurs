@@ -1,84 +1,23 @@
-#include <iostream>
-
-int main() {
-std::cout << " Welcome to our Fotball Arena." << std::endl;
-    std::cout << " -----------------------------" << std::endl;
-    int ticket_amount;
-    do {
-        std::cout << "How many tickets? ";
-
-        std::cin >> ticket_amount;
-
-        if (ticket_amount < 0) {
-            std::cout << "ticket amount can't be negative " << std::endl;
-        }
-
-    } while (ticket_amount < 0);
-
-    constexpr int price_adult = 80;
-    constexpr int price_child = 30;
-    constexpr int price_infant = 0;
-
-    int adult = 0;
-    int child = 0;
-    int infant = 0;
-
-    for (int i = 0; i < ticket_amount; ++i)
-
-    {
-        std::cout << "Enter age of ticket recipricent : " << std::endl << "Person " << i + 1 << ": ";
-
-        int age;
-        std::cin >> age;
-
-        if (age < 8) infant++;
-
-        if (age < 15 && age >8)
-            child++;
-
-        else if (age > 15)
-            adult++;
-    }
-
-
-
-
-
-    int total_price = (adult * price_adult) + (child * price_child) + (infant * price_infant);
-
-
-    std::cout << " Number of tickets : " << ticket_amount << std::endl;
-    std::cout << "Total price = " << total_price;
-
-
-
-//min code
-
 /**************************************************************************
- Author: 
+ Author: Lukas Larsson, Marcus Ekroth
  Course: tnd012, lab3, exercise 1
 ************************************************************************* */
-/*
- * TND012, Lab3: exercise 1
- * Author: Lukas Larsson TND012
- *
- */
 #include <iostream>
 
 int main() {
-    // Wellcomes user
+    // Welcomes user
     std::cout << "Welcome to our Football Arena.\n";
     std::cout << "------------------------------\n";
 
     // Ask user how many tickets they want
-    int tikets; // Stores the number of tickets (whole numbers only)
+    int tickets; // Stores the number of tickets (whole numbers only)
 
     // Keep asking until the user enters a valid number of tickets (> 0)
     while (true) {
         std::cout << "Number of tickets: ";
-        std::cin >> tikets;
+        std::cin >> tickets;
 
-        if (tikets <= 0) {
+        if (tickets <= 0) {
             // If invalid input, show error message and repeat
             std::cout << "Invalid number of tickets!! Please enter a positive number.\n";
         }
@@ -96,8 +35,8 @@ int main() {
     constexpr double Price_teen = 30.0;  // Ages 8–15
     constexpr double Price_adult = 80.0; // Ages over 15
 
-    // Loops once for every ticket the user asked for by compairing tikets to 0 + the amount of loops
-    for (int i = 0; i < tikets; i++) {
+    // Loops once for every ticket the user asked for by compairing tickets to 0 + the amount of loops
+    for (int i = 0; i < tickets; i++) {
         // Request age of the ticket holder
         std::cout << "Enter age for persson " << i + 1 << ": "; //Fixade problemet
         int age;   // Stores the entered age
