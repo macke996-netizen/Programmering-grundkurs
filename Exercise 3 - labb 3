@@ -1,10 +1,10 @@
-// Just nu fel tästa och see
+// Just nu fel tästa och see fixat?
 //yes
 
 
 /**************************************************************************
  Author:
- Course: tnd012, lab3, exercise 3
+ Course: tnd012, lab3, exercise 2
 ************************************************************************* */
 
 // uppgift3.cpp
@@ -21,7 +21,7 @@ int main() {
     int taxPercent;
     std::cin >> taxPercent;
 
-    // Prepare a vector to store product prices
+    // Prepare a vector to store product prices x1 x2 x3 ... xn
     std::vector<double> prices;
 
     // Read product prices until user enters STOP (or another non-number)
