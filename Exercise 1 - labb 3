@@ -2,7 +2,8 @@
 
 int main() {
    // test jag är Lukas se botten för min code
-   
+   //test marcus
+
     int ticket_amount;
     do
     {
