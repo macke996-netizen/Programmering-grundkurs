@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-   // test 
+   // test jag är Lukas
    
     int ticket_amount;
     do
