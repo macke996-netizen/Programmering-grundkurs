@@ -1,9 +1,9 @@
 // Just nu fel tästa och see fixat?
-//yes
+//yes, antar det.
 
 
 /**************************************************************************
- Author:
+ Author: Lukas Larsson, Marcus Ekroth
  Course: tnd012, lab3, exercise 2
 ************************************************************************* */
 
@@ -53,5 +53,5 @@ int main() {
             << priceWithTax << "\n";
     }
 
-    return 0;
+  
 }
