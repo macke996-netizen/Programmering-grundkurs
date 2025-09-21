@@ -38,7 +38,7 @@ int main() {
 
     // Print table header
     std::cout << "\nPrice    Tax    Price with Tax\n";
-    std::cout << "--------------------------------\n";
+    std::cout << "--------------------------------\n--------------------------------\n";
 
     // Print all prices with their tax and total
     for (double price : prices) {
