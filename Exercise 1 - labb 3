@@ -1,7 +1,7 @@
 #include <iostream>
 
 int main() {
-   // test jag är Lukas
+   // test jag är Lukas se botten för min code
    
     int ticket_amount;
     do
@@ -58,3 +58,80 @@ int main() {
 
 
          std::cout << " Total price = " << total_price << "SEK";
+
+
+
+//min code
+
+/**************************************************************************
+ Author: 
+ Course: tnd012, lab3, exercise 1
+************************************************************************* */
+/*
+ * TND012, Lab3: exercise 1
+ * Author: Lukas Larsson TND012
+ *
+ */
+#include <iostream>
+
+int main() {
+    // Wellcomes user
+    std::cout << "Welcome to our Football Arena.\n";
+    std::cout << "------------------------------\n";
+
+    // Ask user how many tickets they want
+    int tikets; // Stores the number of tickets (whole numbers only)
+
+    // Keep asking until the user enters a valid number of tickets (> 0)
+    while (true) {
+        std::cout << "Number of tickets: ";
+        std::cin >> tikets;
+
+        if (tikets <= 0) {
+            // If invalid input, show error message and repeat
+            std::cout << "Invalid number of tickets!! Please enter a positive number.\n";
+        }
+        else {
+            // If input is valid, break out of the loop
+            break;
+        }
+    }
+
+    // Stores the running total of all ticket prices
+    double Price_tot = 0;
+
+    // Sets constant prices for each age group
+    constexpr double Price_kid = 0.0;    // Kids under 8
+    constexpr double Price_teen = 30.0;  // Ages 8–15
+    constexpr double Price_adult = 80.0; // Ages over 15
+
+    // Loops once for every ticket the user asked for by compairing tikets to 0 + the amount of loops
+    for (int i = 0; i < tikets; i++) {
+        // Request age of the ticket holder
+        std::cout << "Enter age: ";
+        int age;   // Stores the entered age
+        std::cin >> age;
+
+        // Checks which age group the entered age belongs to
+        if (age < 8) {
+            // Price for kids younger than 8
+            std::cout << "Price = " << Price_kid << " SEK\n";
+            Price_tot += Price_kid; // Adds 0 to the total
+        }
+        else if (age <= 15) {
+            // Price for ages 8–15
+            std::cout << "Price = " << Price_teen << " SEK\n";
+            Price_tot += Price_teen; // Adds 30 to the total
+        }
+        else {
+            // Price for adults (older than 15)
+            std::cout << "Price = " << Price_adult << " SEK\n";
+            Price_tot += Price_adult; // Adds 80 to the total
+        }
+    }
+
+    // After loop ends, show the total sum for all tickets
+    std::cout << "Final total price = " << Price_tot << " SEK\n";
+}
+
+
