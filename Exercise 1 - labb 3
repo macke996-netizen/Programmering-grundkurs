@@ -26,7 +26,7 @@ std::cout << " Welcome to our Fotball Arena." << std::endl;
     for (int i = 0; i < ticket_amount; ++i)
 
     {
-        std::cout << "Enter age of ticket recipricent : " << i + 1 << ": ";
+        std::cout << "Enter age of ticket recipricent : " << std::endl << "Person " << i + 1 << ": ";
 
         int age;
         std::cin >> age;
