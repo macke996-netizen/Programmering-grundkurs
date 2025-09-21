@@ -2,3 +2,41 @@
 
 antar att vi använder oss av std::rand()?
 
+/**************************************************************************
+ Author: Lukas Larsson, Marcus Ekroth
+ Course: tnd012, lab3, exercise 4
+************************************************************************* */
+
+#include <iostream>
+
+
+int main() 
+{
+    //Trying all combinations (10^3 combinations)
+    for (int A = 0; A <= 9; A++) {
+
+        for (int B = 0; B <= 9; B++) {
+
+            for (int C = 0; C <= 9; C++) {
+
+                //gets rid of invalid combinations (equivalence between letters not allowed)
+                if (A == B or A == C or B == C) {
+                    continue;
+                }
+                {
+                }
+
+                int AA = 10 * A + A;
+                int BB = 10 * B + B;
+                int CC = 10 * C + C;
+                int ABC = 100 * A + 10 * B + C;
+                
+                //try the equation
+                if (AA + BB + CC == ABC) {
+                    std::cout << "Solution :" << ABC << std::endl;
+
+                }
+            }
+        }
+    }
+}
