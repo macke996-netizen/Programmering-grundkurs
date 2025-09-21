@@ -31,7 +31,7 @@ int main()
                 int CC = 10 * C + C;
                 int ABC = 100 * A + 10 * B + C;
                 
-                //try the equation
+                //trying the equation
                 if (AA + BB + CC == ABC) {
                     std::cout << "Solution :" << ABC << std::endl;
 
