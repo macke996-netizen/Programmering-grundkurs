@@ -109,7 +109,7 @@ int main() {
     // Loops once for every ticket the user asked for by compairing tikets to 0 + the amount of loops
     for (int i = 0; i < tikets; i++) {
         // Request age of the ticket holder
-        std::cout << "Enter age: ";
+        std::cout << "Enter age for persson " << i + 1 << ": "; //Fixade problemet
         int age;   // Stores the entered age
         std::cin >> age;
 
@@ -134,5 +134,9 @@ int main() {
     // After loop ends, show the total sum for all tickets
     std::cout << "Final total price = " << Price_tot << " SEK\n";
 }
+
+
+
+
 
 
