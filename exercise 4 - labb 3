@@ -40,3 +40,33 @@ int main()
         }
     }
 }
+
+
+// Jag tänkte 
+
+#include <iostream>
+
+int main() {
+    for (int A = 0; A <= 9; A++) {
+        for (int B = 0; B <= 9; B++) {
+            for (int C = 0; C <= 9; C++) { // nested loops for A, B, C
+                if (A != B and A != C and B != C) { //only continues if all variubels are difrent
+
+                    int AA = A * 10 + A; // A in both the tens place and the oneces place
+                    int BB = B * 10 + B; // B in both the tens place and the oneces place
+                    int CC = C * 10 + C; // C in both the tens place and the oneces place
+                    int ABC = A * 100 + B * 10 + C; //Puts A in the hundreds place B in the tens place and C in the ones place
+
+                    if (AA + BB + CC == ABC) {
+                        std::cout << "Solution found! "
+                            << "A = " << A
+                            << ", B = " << B
+                            << ", C = " << C << "\n";
+                        std::cout << AA << " + " << BB << " + " << CC << " = " << ABC << "\n\n"; // Prints resullt
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
