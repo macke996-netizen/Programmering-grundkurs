@@ -1,1 +1,3 @@
+// Game plan ver 2 1. Generate (all combinations) 2. Prune (remove duplicates) 3. Test (check if it satisfies AA + BB + CC = ABC)
+
 
