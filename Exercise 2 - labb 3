@@ -5,7 +5,10 @@
 #include <iomanip> // for std::fixed and std::setprecision
 
 int main() {
-    int firstPrice, lastPrice, step, taxPercent;
+    int firstPrice;
+    int lastPrice; 
+    int step; 
+    int taxPercent;
 
     // Keep asking until user enters valid input
     while (true) {
@@ -53,5 +56,5 @@ int main() {
             << priceWithTax << "\n";
     }
 
-    return 0;
+   
 }
