@@ -1,0 +1,60 @@
+#include <iostream>
+
+int main() {
+   
+   
+    int ticket_amount;
+    do
+    {
+        std::cout << "How many tickets? ";
+       
+        std::cin >> ticket_amount;
+
+        if (ticket_amount < 0) {
+            std::cout << "ticket amount can't be negative "<<std::endl;
+        }
+   
+    } while (ticket_amount<0);
+   
+    constexpr int price_adult = 80;
+    constexpr int price_child = 30;
+    constexpr int price_infant=0;
+
+     int adult=0;
+     int child=0;
+     int infant=0;
+
+   
+   
+   
+    for (int i = 1; i <= ticket_amount; ++i)
+
+    {
+        std::cout << "Enter age of ticket recipricent : " << std::endl;
+        int age;
+        std::cin >> age;
+
+        if (age < 8)
+            infant++;
+
+        if (age > 8 and age <15)
+            child++;
+
+        else if (age > 15)
+            adult++;
+    }
+       
+
+
+         int total_price = (adult*price_adult) + (child*price_child) + (infant*price_infant);
+         
+         std::cout << " Welcome to our Fotball Arena." << std::endl;
+         std::cout << " -----------------------------" << std::endl;
+         std::cout << " Number of tickets : " << ticket_amount << std::endl;
+
+        //Läs ut åldern för antalet biljetter.
+         //std::cout Enter age of person 1:
+         //std::cout Enter age of person 2:
+
+
+         std::cout << " Total price = " << total_price << "SEK";
