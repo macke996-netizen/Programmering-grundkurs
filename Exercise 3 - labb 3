@@ -1,1 +1,56 @@
+// Just nu fel tästa och see
 
+
+/**************************************************************************
+ Author:
+ Course: tnd012, lab3, exercise 2
+************************************************************************* */
+
+// uppgift3.cpp
+// Lab 3 - Momstabell using std::vector
+
+#include <iostream>
+#include <vector>
+#include <iomanip> // for std::fixed and std::setprecision
+#include <format>  // needed for std::format (C++20)
+
+int main() {
+    // Read tax percentage from user
+    std::cout << "Enter tax percentage: ";
+    int taxPercent;
+    std::cin >> taxPercent;
+
+    // Prepare a vector to store product prices
+    std::vector<double> prices;
+
+    // Read product prices until user enters STOP (or another non-number)
+    std::cout << "Enter product prices: ";
+    double value;
+    while (std::cin >> value) {
+        prices.push_back(value);
+    }
+
+    // Clear the error flag (triggered when user typed STOP)
+    std::cin.clear();
+    std::string dummy;
+    std::cin >> dummy; // read and discard the non-numeric input
+
+    // Print table header
+    std::cout << "\nPrice    Tax    Price with Tax\n";
+    std::cout << "--------------------------------\n";
+
+    // Print all prices with their tax and total
+    for (double price : prices) {
+        double tax = price * (taxPercent / 100.0);
+        double priceWithTax = price + tax;
+
+        std::cout << std::fixed << std::setprecision(2)
+            //<< std::format("{:<20.2f}{:<15.2f}{:<20.2f}\n", price, tax, priceWithTax); fungera ej
+
+            << price << "    "
+            << tax << "    "
+            << priceWithTax << "\n";
+    }
+
+    return 0;
+}
