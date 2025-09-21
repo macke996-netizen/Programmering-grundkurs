@@ -1,1 +1,57 @@
+//Upg 2
 
+
+#include <iostream>
+#include <iomanip> // for std::fixed and std::setprecision
+
+int main() {
+    int firstPrice, lastPrice, step, taxPercent;
+
+    // Keep asking until user enters valid input
+    while (true) {
+        // Request input from user
+        std::cout << "Enter first price: ";
+        std::cin >> firstPrice;
+        std::cout << "Enter last price: ";
+        std::cin >> lastPrice;
+        std::cout << "Enter step size: ";
+        std::cin >> step;
+        std::cout << "Enter tax percentage: ";
+        std::cin >> taxPercent;
+
+        // Check for errors
+        if (firstPrice < 0 or lastPrice < 0 or taxPercent < 0) {
+            std::cout << "Error: Prices and tax must not be negative.\n\n";
+            continue; // ask again
+        }
+        if (firstPrice > lastPrice) {
+            std::cout << "Error: First price cannot be larger than last price.\n\n";
+            continue; // ask again
+        }
+        if (step <= 0) {
+            std::cout << "Error: Step size must be greater than zero.\n\n";
+            continue; // ask again
+        }
+
+        // If input is valid, break out of loop
+        break;
+    }
+
+    // Print table header
+    std::cout << "\nPrice    Tax     Price with Tax\n";
+    std::cout << "-------------------------------\n";
+
+    // Loop through all prices
+    for (int price = firstPrice; price <= lastPrice; price += step) {
+        double tax = price * (taxPercent / 100.0);
+        double priceWithTax = price + tax;
+
+        // Print values with 2 decimal places
+        std::cout << std::fixed << std::setprecision(2)
+            << price << "    "
+            << tax << "    "
+            << priceWithTax << "\n";
+    }
+
+    return 0;
+}
