@@ -50,10 +50,7 @@ int main() {
         double priceWithTax = price + tax;
 
         // Print values with 2 decimal places
-        std::cout << std::fixed << std::setprecision(2)
-            << price << "    "
-            << tax << "    "
-            << priceWithTax << "\n";
+        std::cout << std::fixed << std::setprecision(2) << price << "    " << tax << "    " << priceWithTax << "\n";
     }
 
    
